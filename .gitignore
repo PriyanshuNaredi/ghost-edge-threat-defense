@@ -1,0 +1,18 @@
+# Build artifacts
+backend/ghost.exe
+backend/ghost
+*.exe
+*.exe~
+
+# Dependencies & build output
+frontend/node_modules/
+frontend/dist/
+
+# Environment & editor
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

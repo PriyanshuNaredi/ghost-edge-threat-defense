@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-abyss: #0a0e17;
+  --color-panel: #0d1420;
+  --color-panel-2: #111a2b;
+  --color-grid: #16233a;
+  --color-cyan-data: #22d3ee;
+  --color-amber-warn: #fbbf24;
+  --color-red-block: #f43f5e;
+  --color-green-ok: #34d399;
+  --font-mono: "JetBrains Mono", "Cascadia Code", "Fira Code", ui-monospace, monospace;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-abyss);
+  color: #cbd5e1;
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+}
+
+/* subtle CRT scanline overlay for the command-deck vibe */
+.scanlines::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.glass {
+  background: rgba(13, 20, 32, 0.72);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(34, 211, 238, 0.12);
+}
+
+.glow-cyan { box-shadow: 0 0 24px rgba(34, 211, 238, 0.15), inset 0 0 24px rgba(34, 211, 238, 0.04); }
+.glow-red { box-shadow: 0 0 32px rgba(244, 63, 94, 0.35), inset 0 0 24px rgba(244, 63, 94, 0.08); }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 3px; }
+
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
